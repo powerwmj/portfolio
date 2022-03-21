@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Outfit:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+* {box-sizing: border-box;}
+body {font-family: 'Noto Sans KR', sans-serif; margin: 0; overflow-x: hidden;}
+h1,h2,h3,h4,h5,h6, figure, p {margin: 0;}
+a {text-decoration: none;}
+ul, li {list-style: none; padding: 0; margin: 0;}
+img {vertical-align: middle;}
+table {border-collapse: collapse;}
+
+header {
+    width: 100%; position: fixed; z-index: 10; top: 75px; width: 1470px; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; align-items: center;
+    h1 {
+        width: 100px; height: 100px; vertical-align: top;
+        a {width: 100%; height: 100%; line-height: 100px; font-size: 0; background: #f7bf31; display: block; text-align: center;}
+    }
+    .menu {
+        ul {
+            display: flex; justify-content: space-between; align-items: center; height: 50px; padding: 10px 0; background: rgba(0,0,0,.5);
+            li {
+                padding-left: 30px;
+                a {color: rgba(255,255,255,.5); font-size: 25px; font-family: 'Outfit', sans-serif; font-weight: 400;}
+                &::before {content: url('/img/ico_mn_2.png'); display: inline-block; vertical-align: middle;}
+            }
+            li.on {
+                a {color: #f7bf31;}
+                &::before {content: url('/img/ico_mn_1.png'); display: inline-block;}
+            }
+        }
+        p {display: none;}
+    }
+
+}
+
+header.active {
+    h1 a {background: #fff;}
+    .menu ul {display: none;}
+    .menu p {display: block; width: 60px; height: 60px; border-radius: 50%; background: #fff; text-align: center; line-height: 60px;}
+    .menu p span {display: block; width: 100%; height: 100%;}
+}
+
+// scroll
+
+.content div{position:relative}
+.content div p{position:absolute;top:50%;margin-top:-40px;text-align:center;width:100%;font-size:80px;font-weight:bold;color:#fff}
+.content .cnt01{}
+.content .cnt02{background-color:#000}
+.content .cnt03{background-color:#000}
+.black {background: #000;}
+.inner {width: 1470px; margin: 0 auto;}
+
+main {
+    .visual {
+        width: 100%; height: 100vh; position: relative;
+        img {object-fit: cover; object-position: center;}
+        .per {width: 100%; position: absolute; left: 0; bottom: 0;}
+        .tit {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 100%;
+            h2 {text-align: center; color: #fff; font-size: 120px; font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 136px; text-shadow: 15px 15px 15px rgba(0,0,0,0.35);}
+            h2 span {opacity: 0; transform: translateY(100%);}
+            h2.active {opacity: 1; transform: translateY(0%);}
+            h3 {text-align: center; color: rgba(255,255,255,0); font-size: 120px; font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 136px; text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff}
+            p {
+                font-weight: 300; font-size: 24px; line-height: 50px; text-align: center; margin-top: 180px;
+                span {font-weight: 500;}
+            }
+        }
+        
+    }
+
+    .slider_w {
+        top: 50%; transform: translateY(-50%); position: relative;
+        .slide {
+            display: flex; align-items: center; justify-content: flex-start;
+            .txt {
+                color: #fff; padding-left: 60px; margin-top: -145px;
+                h3 {font-size: 64px; font-family: 'Noto Sans KR', sans-serif; font-weight: 700; position: relative; margin-bottom: 25px;}
+                h3::before {position: absolute; content: ''; display: block; width: 60px; height: 4px; background: #fff; top: calc(50% - 2px); left: -90px;}
+                li {font-size: 18px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; line-height: 38px;}
+                li::before {content: url('../img/slide_bullet.png');}
+                li span {font-weight: 700;}
+                a {display: inline-block; width: 185px; height: 56px; border: 1px solid #fff; margin-top: 45px; line-height: 54px; text-align: center; color: #fff; font-size: 16px; font-weight: 300; position: relative; padding-right: 30px;}
+                a::after {content: ''; position: absolute; width: 30px; height: 8px; background: url('../img/arrow_more.png'); top: calc(50% - 4px); right: 30px;}
+            }
+        }
+        .pager {
+            display: flex; justify-content: center; align-items: center; position: absolute; left: calc(50% + 273px); bottom: 80px;
+            div {
+                font-size: 18px; color: #fff; font-weight: 300; padding: 0 15px; width: auto;
+                b {font-size: 24px; font-weight: 700;}
+            }
+            
+        }
+    }
+    
+    .info_w {
+        width: 100%; height: 100%; display: flex;
+        .left, .right {width: 50%; height: 100%;}
+        .left {
+            color: #fff; padding: 220px 0 0 150px;
+            h3 {font-size: 64px; font-family: 'Noto Sans KR', sans-serif; font-weight: 700; position: relative; margin-bottom: 25px;}
+            h3::before {position: absolute; content: ''; display: block; width: 60px; height: 4px; background: #fff; top: calc(50% - 2px); left: -90px;}
+            li {font-size: 18px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; line-height: 38px;}
+            li::before {content: url('../img/slide_bullet.png');}
+            li span {font-weight: 700; padding-right: 23px;}
+
+        }
+        .right {
+            background: #322738; position: relative;
+            h3 {font-size: 110px; font-family: 'Outfit', sans-serif; position: absolute;}
+            h3.full {color: #fff; top: 390px; left: -40px;}
+            h3.line {text-shadow:-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; color: #322738; top: 510px; left: 240px;}
+            .cir1 {position: absolute; width: 200px; height: 200px; border-radius: 50%; background: #b58fcc; top: 100px; left: 100px;}
+            .cir2 {position: absolute; width: 400px; height: 400px; border-radius: 50%; background: #592966; top: 480px; left: 460px;}
+        }
+    }
+
+}
+
+.list_w {
+    padding-top: 280px;
+    .tit {
+        display: flex;
+        h2 {
+            font-family: 'Racing Sans One', cursive; font-size: 110px; line-height: 100px; color: #fff; letter-spacing: 10px;
+            span {text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; color: #000; padding-left: 300px;}
+        }
+        p {color: #fff; padding: 100px 0 0 150px; font-size: 24px; line-height: 36px;}
+
+    }
+    .list {
+        padding-top: 100px; display: flex; flex-wrap: wrap;
+        .thumb {
+            height: 760px; position: relative; margin-right: 30px;
+            .img {}
+            .txt {
+                padding-top: 40px;
+                h3 {font-size: 30px; font-weight: 500; color: #fff; line-height: 36px;}
+                .device {font-size: 24px; font-weight: 300; color: #f7bf31;}
+                .date {font-size: 16px; font-weight: 300; color: #fff; line-height: 30px; position: absolute; bottom: 75px;}
+                .date span {padding-right: 35px;}
+            }
+        }
+        .thumb:nth-child(4n) {margin-right: 0;}
+    }
+}
+
+.detail_w {
+    position: relative; z-index: 1;
+    .bg {
+        height: 150vh; background: url('../img/KBOnetrade_01.png') top no-repeat; background-size: cover; opacity: .5; z-index: 1;}
+    .con_w {
+        z-index: 10; position: absolute; top: 0;
+        .g_bg {background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); padding: 655px 100px 0 100px;}
+        .btn_w {width: 285px; height: 100px; background: #fff; text-align: center; float: right;}        
+        .btn_w a {color:  #000; font-size: 24px; font-weight: 500;  line-height: 100px;}
+        .con {width: 100%; padding: 100px 125px; background: #fff; clear: both;}
+        .con .txt h3 {font-size: 64px; font-weight: 700;}
+        .con .txt p {font-size: 24px; font-weight: 500; line-height: 60px;}
+        .con .txt p span {padding-right: 120px;}
+        .con .img {width: 100%}
+        .con .img img {width: 100%;}
+    }
+}
+
+.about_w {
+    padding-top: 280px;
+    .tit {
+        display: flex;
+        h2 {
+            font-family: 'Racing Sans One', cursive; font-size: 110px; line-height: 100px; color: #fff; letter-spacing: 10px;
+            span {text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; color: #000; padding-left: 300px;}
+        }
+    }
+    .about_01 {
+        .inner {display: flex; justify-content: space-between; padding: 70px 0 150px 0;}
+        .img, .txt {width: 650px}
+        .txt {
+            h3 {font-family: 'Racing Sans One', cursive; font-size: 64px; color: #fff; padding: 160px 0 90px 0;}
+            li {color: #fff; font-size: 20px; font-weight: 400; line-height: 50px;}
+            li span {display: inline-block; width: 110px; color: #f7bf31;}
+            li span.long {width: inherit;}
+            li span.line {color: #fff; line-height: 36px; width: inherit;}
+        }
+    }
+    .about_02 {
+        .bg {background-image : url('../img/about_02.png'); background-position: center; background-repeat: no-repeat; background-attachment:fixed; height : 330px; overflow : auto; width : 100%;}
+        .txt {
+            padding-top: 150px;
+            h3 {font-family: 'Racing Sans One', cursive; font-size: 64px; color: #fff; text-align: center;}
+            ul {width: 760px; margin: 0 auto; padding: 90px 0 120px 0; display: flex; flex-wrap: wrap;}
+            li {position: relative; padding-left: 85px; color: #fff; font-size: 16px; font-weight: 300; line-height: 30px; margin-bottom: 40px; width: 50%;}
+            li span {color: #f7bf31; font-size: 20px; font-weight: 700; display: block;}
+            li::before {content: ''; position: absolute; width: 65px; height: 65px; border-radius: 50%; background-color: #f7bf31; background-position: center; background-repeat: no-repeat; display: block; top: -2px; left: 0;}
+            li:nth-of-type(1):before {background-image: url('../img/skill_01.png');}
+            li:nth-of-type(2):before {background-image: url('../img/skill_02.png');}
+            li:nth-of-type(3):before {background-image: url('../img/skill_03.png');}
+            li:nth-of-type(4):before {background-image: url('../img/skill_04.png');}
+            li:nth-of-type(5):before {background-image: url('../img/skill_05.png');}
+            li:nth-of-type(6):before {background-image: url('../img/skill_06.png');}
+        }
+    }
+    .about_03 {
+        .inner {display: flex; justify-content: space-between; padding: 70px 0 150px 0;}
+        .img, .txt {width: 650px}
+        .txt {
+            h3 {font-family: 'Racing Sans One', cursive; font-size: 64px; color: #fff; padding: 45px 0 90px 0; text-align: right;}
+            li {color: #fff; font-size: 20px; font-weight: 400; line-height: 40px; text-align: right; padding-bottom: 20px;}
+            li span {display: inline-block; color: #f7bf31; display: block;}
+        }
+    }
+}
